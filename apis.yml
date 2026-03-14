@@ -17,6 +17,18 @@ apis:
         type: Documentation
       - url: openapi/cflow-openapi.yml
         type: OpenAPI
+      - url: json-schema/workflow.json
+        type: JSONSchema
+      - url: json-schema/stage.json
+        type: JSONSchema
+      - url: json-schema/request.json
+        type: JSONSchema
+      - url: json-schema/user.json
+        type: JSONSchema
+      - url: json-schema/role.json
+        type: JSONSchema
+      - url: json-ld/cflow-context.jsonld
+        type: JSONLD
     description: >-
       Cflow is a cloud-based workflow automation tool that helps organizations
       streamline and optimize their business processes. By providing a

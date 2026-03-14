@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/api-evangelist/cflow/blob/main/json-schema/workflow.json",
+  "title": "Cflow Workflow",
+  "description": "A Workflow defines an automated business process with stages, rules, and field configurations in Cflow.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the workflow."
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the workflow."
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the workflow."
+    },
+    "status": {
+      "type": "string",
+      "description": "Current status of the workflow.",
+      "enum": [
+        "active",
+        "inactive",
+        "draft"
+      ]
+    },
+    "stages": {
+      "type": "array",
+      "description": "List of process stages in the workflow.",
+      "items": {
+        "$ref": "stage.json"
+      }
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the workflow was created."
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the workflow was last updated."
+    }
+  }
+}

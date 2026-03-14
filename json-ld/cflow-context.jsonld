@@ -1,0 +1,71 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "cflow": "https://us.cflowapps.com/",
+    "workflowId": {
+      "@id": "cflow:workflowId",
+      "@type": "xsd:string"
+    },
+    "stageId": {
+      "@id": "cflow:stageId",
+      "@type": "xsd:string"
+    },
+    "requestId": {
+      "@id": "cflow:requestId",
+      "@type": "xsd:string"
+    },
+    "currentStage": {
+      "@id": "cflow:currentStage",
+      "@type": "xsd:string"
+    },
+    "submittedBy": {
+      "@id": "cflow:submittedBy",
+      "@type": "xsd:string"
+    },
+    "fields": {
+      "@id": "cflow:fields",
+      "@type": "@json"
+    },
+    "stages": {
+      "@id": "cflow:stages",
+      "@type": "@json"
+    },
+    "reviewers": {
+      "@id": "cflow:reviewers",
+      "@type": "@json"
+    },
+    "order": {
+      "@id": "cflow:order",
+      "@type": "xsd:integer"
+    },
+    "status": {
+      "@id": "cflow:status",
+      "@type": "xsd:string"
+    },
+    "role": {
+      "@id": "cflow:role",
+      "@type": "xsd:string"
+    },
+    "permissions": {
+      "@id": "cflow:permissions",
+      "@type": "@json"
+    },
+    "username": {
+      "@id": "cflow:username",
+      "@type": "xsd:string"
+    },
+    "createdAt": {
+      "@id": "cflow:createdAt",
+      "@type": "xsd:dateTime"
+    },
+    "updatedAt": {
+      "@id": "cflow:updatedAt",
+      "@type": "xsd:dateTime"
+    },
+    "name": "schema:name",
+    "description": "schema:description",
+    "email": "schema:email",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "schema": "https://schema.org/"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/api-evangelist/cflow/blob/main/json-schema/role.json",
+  "title": "Cflow Role",
+  "description": "A Role defines a set of permissions for accessing workflows, lookups, reports, and support in Cflow.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the role."
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the role."
+    },
+    "permissions": {
+      "type": "object",
+      "description": "Permission settings for this role across workflows, lookups, reports, and support.",
+      "properties": {
+        "workflows": {
+          "type": "string",
+          "description": "Permission level for workflows."
+        },
+        "lookups": {
+          "type": "string",
+          "description": "Permission level for lookups."
+        },
+        "reports": {
+          "type": "string",
+          "description": "Permission level for reports."
+        },
+        "support": {
+          "type": "string",
+          "description": "Permission level for support."
+        }
+      }
+    }
+  }
+}

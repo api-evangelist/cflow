@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/api-evangelist/cflow/blob/main/json-schema/stage.json",
+  "title": "Cflow Stage",
+  "description": "A Stage represents a step in a workflow process where requests are reviewed, approved, or routed.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the stage."
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the process stage."
+    },
+    "order": {
+      "type": "integer",
+      "description": "Order of the stage in the workflow."
+    },
+    "reviewers": {
+      "type": "array",
+      "description": "Users assigned as reviewers for this stage.",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

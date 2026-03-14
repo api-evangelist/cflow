@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/api-evangelist/cflow/blob/main/json-schema/request.json",
+  "title": "Cflow Request",
+  "description": "A Request is a submission within a workflow that moves through stages for review, approval, or rejection.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the request."
+    },
+    "workflowId": {
+      "type": "string",
+      "description": "Identifier of the associated workflow."
+    },
+    "status": {
+      "type": "string",
+      "description": "Current status of the request.",
+      "enum": [
+        "draft",
+        "pending",
+        "approved",
+        "rejected",
+        "completed"
+      ]
+    },
+    "currentStage": {
+      "type": "string",
+      "description": "Name or identifier of the current process stage."
+    },
+    "fields": {
+      "type": "object",
+      "description": "Dynamic key-value pairs representing the form field data for the request.",
+      "additionalProperties": true
+    },
+    "submittedBy": {
+      "type": "string",
+      "description": "Username of the person who submitted the request."
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the request was created."
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the request was last updated."
+    }
+  }
+}
