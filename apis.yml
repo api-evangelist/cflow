@@ -11,9 +11,12 @@ apis:
       - Protocols
       - Rules
     humanURL: https://www.cflowapps.com
+    baseURL: https://us.cflowapps.com
     properties:
-      - url: https://www.cflowapps.com
+      - url: https://www.cflowapps.com/workflow/workflow-api/
         type: Documentation
+      - url: openapi/cflow-openapi.yml
+        type: OpenAPI
     description: >-
       Cflow is a cloud-based workflow automation tool that helps organizations
       streamline and optimize their business processes. By providing a
@@ -36,7 +39,7 @@ type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 created: '2025-01-08'
-modified: '2025-01-13'
+modified: '2026-03-14'
 position: Consumer
 description: >-
   A workflow API is a set of rules and protocols that allow software

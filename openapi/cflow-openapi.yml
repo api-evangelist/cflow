@@ -1,1 +1,627 @@
-{}
+openapi: 3.1.0
+info:
+  title: Cflow API
+  description: >-
+    Cflow's business automation workflow offers REST APIs for applications,
+    services, and programming components. The API provides a way to connect with
+    external applications and update their data in Cflow's process automation
+    engine. You can list workflows, initiate or approve requests, and manage
+    users, roles, and permissions using the external REST API. All business
+    objects and integration object structures are stored as REST API resources
+    and are available in JSON or XML format.
+  version: 1.0.0
+  contact:
+    name: Cflow Support
+    url: https://help.cflowapps.com/
+  termsOfService: https://www.cflowapps.com/terms-of-use/
+  license:
+    name: Proprietary
+    url: https://www.cflowapps.com/terms-of-use/
+externalDocs:
+  description: Cflow Workflow API Documentation
+  url: https://www.cflowapps.com/workflow/workflow-api/
+servers:
+  - url: https://us.cflowapps.com
+    description: Cflow US Production Server
+security:
+  - apiKey: []
+    userKey: []
+    username: []
+tags:
+  - name: Workflows
+    description: Operations for managing workflows.
+  - name: Requests
+    description: Operations for managing workflow requests.
+  - name: Users
+    description: Operations for managing users and roles.
+paths:
+  /integromat/api/cflow/getworkflows:
+    get:
+      operationId: getWorkflows
+      summary: List Workflows
+      description: >-
+        Retrieves a list of all available workflows in the Cflow account.
+        Returns workflow definitions including their names, identifiers, and
+        associated metadata.
+      tags:
+        - Workflows
+      responses:
+        '200':
+          description: A list of workflows.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Workflow'
+        '401':
+          description: Unauthorized. Invalid or missing authentication credentials.
+        '403':
+          description: Forbidden. Insufficient permissions.
+        '500':
+          description: Internal server error.
+  /integromat/api/cflow/workflows/{workflowId}:
+    get:
+      operationId: getWorkflow
+      summary: Get Workflow
+      description: >-
+        Retrieves the details of a specific workflow by its unique identifier,
+        including its stages, fields, and configuration.
+      tags:
+        - Workflows
+      parameters:
+        - name: workflowId
+          in: path
+          required: true
+          description: The unique identifier of the workflow.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Workflow details.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Workflow'
+        '401':
+          description: Unauthorized.
+        '404':
+          description: Workflow not found.
+        '500':
+          description: Internal server error.
+  /integromat/api/cflow/workflows/{workflowId}/requests:
+    get:
+      operationId: listRequests
+      summary: List Requests
+      description: >-
+        Retrieves a list of requests for a specific workflow. Returns request
+        records including their status and field data.
+      tags:
+        - Requests
+      parameters:
+        - name: workflowId
+          in: path
+          required: true
+          description: The unique identifier of the workflow.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A list of requests.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Request'
+        '401':
+          description: Unauthorized.
+        '404':
+          description: Workflow not found.
+        '500':
+          description: Internal server error.
+    post:
+      operationId: createRequest
+      summary: Create Request
+      description: >-
+        Creates a new request in the specified workflow. Populates the fields
+        and submits it for processing, where all field validations and rules
+        are evaluated and the request may move to the next stage based on rule
+        conditions.
+      tags:
+        - Requests
+      parameters:
+        - name: workflowId
+          in: path
+          required: true
+          description: The unique identifier of the workflow.
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RequestCreate'
+      responses:
+        '201':
+          description: Request created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Request'
+        '400':
+          description: Bad request. Validation errors.
+        '401':
+          description: Unauthorized.
+        '404':
+          description: Workflow not found.
+        '500':
+          description: Internal server error.
+  /integromat/api/cflow/workflows/{workflowId}/requests/{requestId}:
+    get:
+      operationId: getRequest
+      summary: Get Request
+      description: >-
+        Retrieves the details of a specific request including its current
+        stage, field values, and processing history.
+      tags:
+        - Requests
+      parameters:
+        - name: workflowId
+          in: path
+          required: true
+          description: The unique identifier of the workflow.
+          schema:
+            type: string
+        - name: requestId
+          in: path
+          required: true
+          description: The unique identifier of the request.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Request details.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Request'
+        '401':
+          description: Unauthorized.
+        '404':
+          description: Request or workflow not found.
+        '500':
+          description: Internal server error.
+    put:
+      operationId: updateRequest
+      summary: Update Request
+      description: >-
+        Updates an existing request in the specified workflow. Modifies field
+        values and triggers any associated rules or validations.
+      tags:
+        - Requests
+      parameters:
+        - name: workflowId
+          in: path
+          required: true
+          description: The unique identifier of the workflow.
+          schema:
+            type: string
+        - name: requestId
+          in: path
+          required: true
+          description: The unique identifier of the request.
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RequestUpdate'
+      responses:
+        '200':
+          description: Request updated successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Request'
+        '400':
+          description: Bad request. Validation errors.
+        '401':
+          description: Unauthorized.
+        '404':
+          description: Request or workflow not found.
+        '500':
+          description: Internal server error.
+    delete:
+      operationId: deleteRequest
+      summary: Delete Request
+      description: Deletes a specific request from the workflow.
+      tags:
+        - Requests
+      parameters:
+        - name: workflowId
+          in: path
+          required: true
+          description: The unique identifier of the workflow.
+          schema:
+            type: string
+        - name: requestId
+          in: path
+          required: true
+          description: The unique identifier of the request.
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Request deleted successfully.
+        '401':
+          description: Unauthorized.
+        '404':
+          description: Request or workflow not found.
+        '500':
+          description: Internal server error.
+  /integromat/api/cflow/workflows/{workflowId}/requests/{requestId}/approve:
+    post:
+      operationId: approveRequest
+      summary: Approve Request
+      description: >-
+        Approves a workflow request at its current process stage. The request
+        may move to the next stage based on the workflow configuration and
+        rule conditions.
+      tags:
+        - Requests
+      parameters:
+        - name: workflowId
+          in: path
+          required: true
+          description: The unique identifier of the workflow.
+          schema:
+            type: string
+        - name: requestId
+          in: path
+          required: true
+          description: The unique identifier of the request.
+          schema:
+            type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApprovalAction'
+      responses:
+        '200':
+          description: Request approved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Request'
+        '400':
+          description: Bad request.
+        '401':
+          description: Unauthorized.
+        '404':
+          description: Request or workflow not found.
+        '500':
+          description: Internal server error.
+  /integromat/api/cflow/workflows/{workflowId}/requests/{requestId}/reject:
+    post:
+      operationId: rejectRequest
+      summary: Reject Request
+      description: >-
+        Rejects a workflow request at its current process stage with an
+        optional comment explaining the reason for rejection.
+      tags:
+        - Requests
+      parameters:
+        - name: workflowId
+          in: path
+          required: true
+          description: The unique identifier of the workflow.
+          schema:
+            type: string
+        - name: requestId
+          in: path
+          required: true
+          description: The unique identifier of the request.
+          schema:
+            type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApprovalAction'
+      responses:
+        '200':
+          description: Request rejected successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Request'
+        '400':
+          description: Bad request.
+        '401':
+          description: Unauthorized.
+        '404':
+          description: Request or workflow not found.
+        '500':
+          description: Internal server error.
+  /integromat/api/cflow/workflows/{workflowId}/drafts:
+    post:
+      operationId: createDraftRequest
+      summary: Create Draft Request
+      description: >-
+        Creates a new request in the selected workflow, populates the fields,
+        and saves it as a draft without submitting it for processing.
+      tags:
+        - Requests
+      parameters:
+        - name: workflowId
+          in: path
+          required: true
+          description: The unique identifier of the workflow.
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RequestCreate'
+      responses:
+        '201':
+          description: Draft request created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Request'
+        '400':
+          description: Bad request. Validation errors.
+        '401':
+          description: Unauthorized.
+        '404':
+          description: Workflow not found.
+        '500':
+          description: Internal server error.
+  /integromat/api/cflow/users:
+    get:
+      operationId: listUsers
+      summary: List Users
+      description: >-
+        Retrieves a list of users in the Cflow account, including their roles
+        and permissions.
+      tags:
+        - Users
+      responses:
+        '200':
+          description: A list of users.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden. Admin access required.
+        '500':
+          description: Internal server error.
+  /integromat/api/cflow/roles:
+    get:
+      operationId: listRoles
+      summary: List Roles
+      description: >-
+        Retrieves a list of roles defined in the Cflow account, including
+        their associated permissions for workflows, lookups, reports, and
+        support.
+      tags:
+        - Users
+      responses:
+        '200':
+          description: A list of roles.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Role'
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden. Admin access required.
+        '500':
+          description: Internal server error.
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      name: apikey
+      in: header
+      description: >-
+        API key obtained from Cflow Dashboard under Admin > API Settings >
+        Generate API key.
+    userKey:
+      type: apiKey
+      name: userkey
+      in: header
+      description: >-
+        User key obtained from Cflow Profile > API Key > UserKey.
+    username:
+      type: apiKey
+      name: username
+      in: header
+      description: The Cflow account username.
+  schemas:
+    Workflow:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier of the workflow.
+        name:
+          type: string
+          description: Name of the workflow.
+        description:
+          type: string
+          description: Description of the workflow.
+        status:
+          type: string
+          description: Current status of the workflow.
+          enum:
+            - active
+            - inactive
+            - draft
+        stages:
+          type: array
+          description: List of process stages in the workflow.
+          items:
+            $ref: '#/components/schemas/Stage'
+        createdAt:
+          type: string
+          format: date-time
+          description: Timestamp when the workflow was created.
+        updatedAt:
+          type: string
+          format: date-time
+          description: Timestamp when the workflow was last updated.
+    Stage:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier of the stage.
+        name:
+          type: string
+          description: Name of the process stage.
+        order:
+          type: integer
+          description: Order of the stage in the workflow.
+        reviewers:
+          type: array
+          description: Users assigned as reviewers for this stage.
+          items:
+            type: string
+    Request:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier of the request.
+        workflowId:
+          type: string
+          description: Identifier of the associated workflow.
+        status:
+          type: string
+          description: Current status of the request.
+          enum:
+            - draft
+            - pending
+            - approved
+            - rejected
+            - completed
+        currentStage:
+          type: string
+          description: Name or identifier of the current process stage.
+        fields:
+          type: object
+          description: >-
+            Dynamic key-value pairs representing the form field data for
+            the request.
+          additionalProperties: true
+        submittedBy:
+          type: string
+          description: Username of the person who submitted the request.
+        createdAt:
+          type: string
+          format: date-time
+          description: Timestamp when the request was created.
+        updatedAt:
+          type: string
+          format: date-time
+          description: Timestamp when the request was last updated.
+    RequestCreate:
+      type: object
+      properties:
+        fields:
+          type: object
+          description: >-
+            Key-value pairs representing the form field data for the new
+            request.
+          additionalProperties: true
+      required:
+        - fields
+    RequestUpdate:
+      type: object
+      properties:
+        fields:
+          type: object
+          description: >-
+            Key-value pairs representing the form field data to update.
+          additionalProperties: true
+      required:
+        - fields
+    ApprovalAction:
+      type: object
+      properties:
+        comment:
+          type: string
+          description: Optional comment explaining the approval or rejection.
+        reassignTo:
+          type: string
+          description: >-
+            Username to reassign the request to instead of approving or
+            rejecting.
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier of the user.
+        username:
+          type: string
+          description: Username of the user.
+        email:
+          type: string
+          format: email
+          description: Email address of the user.
+        role:
+          type: string
+          description: Role assigned to the user.
+        status:
+          type: string
+          description: Account status.
+          enum:
+            - active
+            - inactive
+    Role:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier of the role.
+        name:
+          type: string
+          description: Name of the role.
+        permissions:
+          type: object
+          description: >-
+            Permission settings for this role across workflows, lookups,
+            reports, and support.
+          properties:
+            workflows:
+              type: string
+              description: Permission level for workflows.
+            lookups:
+              type: string
+              description: Permission level for lookups.
+            reports:
+              type: string
+              description: Permission level for reports.
+            support:
+              type: string
+              description: Permission level for support.
