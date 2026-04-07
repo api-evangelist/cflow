@@ -5,11 +5,11 @@ apis:
   - aid: cflow:cflow
     name: Cflow
     tags:
-      - Integrations
       - Automation
-      - Workflows
+      - Integrations
       - Protocols
       - Rules
+      - Workflows
     humanURL: https://www.cflowapps.com
     baseURL: https://us.cflowapps.com
     properties:
@@ -38,12 +38,12 @@ apis:
       analytics, Cflow empowers teams to work smarter and more effectively.
 name: Cflow
 tags:
-  - Integrations
   - Automations
-  - Rules
-  - Protocols
-  - Workflows
+  - Integrations
   - Platform
+  - Protocols
+  - Rules
+  - Workflows
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party

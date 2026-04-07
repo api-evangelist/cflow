@@ -28,12 +28,12 @@ security:
     userKey: []
     username: []
 tags:
-  - name: Workflows
-    description: Operations for managing workflows.
   - name: Requests
     description: Operations for managing workflow requests.
   - name: Users
     description: Operations for managing users and roles.
+  - name: Workflows
+    description: Operations for managing workflows.
 paths:
   /integromat/api/cflow/getworkflows:
     get:
