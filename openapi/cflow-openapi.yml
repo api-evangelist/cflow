@@ -38,7 +38,7 @@ paths:
   /integromat/api/cflow/getworkflows:
     get:
       operationId: getWorkflows
-      summary: List Workflows
+      summary: Cflow List Workflows
       description: >-
         Retrieves a list of all available workflows in the Cflow account.
         Returns workflow definitions including their names, identifiers, and
@@ -63,7 +63,7 @@ paths:
   /integromat/api/cflow/workflows/{workflowId}:
     get:
       operationId: getWorkflow
-      summary: Get Workflow
+      summary: Cflow Get Workflow
       description: >-
         Retrieves the details of a specific workflow by its unique identifier,
         including its stages, fields, and configuration.
@@ -92,7 +92,7 @@ paths:
   /integromat/api/cflow/workflows/{workflowId}/requests:
     get:
       operationId: listRequests
-      summary: List Requests
+      summary: Cflow List Requests
       description: >-
         Retrieves a list of requests for a specific workflow. Returns request
         records including their status and field data.
@@ -122,7 +122,7 @@ paths:
           description: Internal server error.
     post:
       operationId: createRequest
-      summary: Create Request
+      summary: Cflow Create Request
       description: >-
         Creates a new request in the specified workflow. Populates the fields
         and submits it for processing, where all field validations and rules
@@ -161,7 +161,7 @@ paths:
   /integromat/api/cflow/workflows/{workflowId}/requests/{requestId}:
     get:
       operationId: getRequest
-      summary: Get Request
+      summary: Cflow Get Request
       description: >-
         Retrieves the details of a specific request including its current
         stage, field values, and processing history.
@@ -195,7 +195,7 @@ paths:
           description: Internal server error.
     put:
       operationId: updateRequest
-      summary: Update Request
+      summary: Cflow Update Request
       description: >-
         Updates an existing request in the specified workflow. Modifies field
         values and triggers any associated rules or validations.
@@ -237,7 +237,7 @@ paths:
           description: Internal server error.
     delete:
       operationId: deleteRequest
-      summary: Delete Request
+      summary: Cflow Delete Request
       description: Deletes a specific request from the workflow.
       tags:
         - Requests
@@ -266,7 +266,7 @@ paths:
   /integromat/api/cflow/workflows/{workflowId}/requests/{requestId}/approve:
     post:
       operationId: approveRequest
-      summary: Approve Request
+      summary: Cflow Approve Request
       description: >-
         Approves a workflow request at its current process stage. The request
         may move to the next stage based on the workflow configuration and
@@ -310,7 +310,7 @@ paths:
   /integromat/api/cflow/workflows/{workflowId}/requests/{requestId}/reject:
     post:
       operationId: rejectRequest
-      summary: Reject Request
+      summary: Cflow Reject Request
       description: >-
         Rejects a workflow request at its current process stage with an
         optional comment explaining the reason for rejection.
@@ -353,7 +353,7 @@ paths:
   /integromat/api/cflow/workflows/{workflowId}/drafts:
     post:
       operationId: createDraftRequest
-      summary: Create Draft Request
+      summary: Cflow Create Draft Request
       description: >-
         Creates a new request in the selected workflow, populates the fields,
         and saves it as a draft without submitting it for processing.
@@ -390,7 +390,7 @@ paths:
   /integromat/api/cflow/users:
     get:
       operationId: listUsers
-      summary: List Users
+      summary: Cflow List Users
       description: >-
         Retrieves a list of users in the Cflow account, including their roles
         and permissions.
@@ -414,7 +414,7 @@ paths:
   /integromat/api/cflow/roles:
     get:
       operationId: listRoles
-      summary: List Roles
+      summary: Cflow List Roles
       description: >-
         Retrieves a list of roles defined in the Cflow account, including
         their associated permissions for workflows, lookups, reports, and
