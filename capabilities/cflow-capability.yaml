@@ -1,0 +1,594 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Cflow API
+  description: Cflow's business automation workflow offers REST APIs for applications, services, and programming components.
+    The API provides a way to connect with external applications and update their data in Cflow's process automation engine.
+    You can list workflows, initiate or approve requests, and manage users, roles, and permissions using the external REST
+    API. All business objects and integration object structures are stored as REST API resources and are available in JSON
+    or XML format.
+  tags:
+  - Cflow
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: cflow
+    baseUri: https://us.cflowapps.com
+    description: Cflow API HTTP API.
+    authentication:
+      type: apikey
+      in: header
+      name: apikey
+      value: '{{CFLOW_TOKEN}}'
+    resources:
+    - name: integromat-api-cflow-getworkflows
+      path: /integromat/api/cflow/getworkflows
+      operations:
+      - name: getworkflows
+        method: GET
+        description: Cflow List Workflows
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: integromat-api-cflow-workflows-workflowid
+      path: /integromat/api/cflow/workflows/{workflowId}
+      operations:
+      - name: getworkflow
+        method: GET
+        description: Cflow Get Workflow
+        inputParameters:
+        - name: workflowId
+          in: path
+          type: string
+          required: true
+          description: The unique identifier of the workflow.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: integromat-api-cflow-workflows-workflowid-reques
+      path: /integromat/api/cflow/workflows/{workflowId}/requests
+      operations:
+      - name: listrequests
+        method: GET
+        description: Cflow List Requests
+        inputParameters:
+        - name: workflowId
+          in: path
+          type: string
+          required: true
+          description: The unique identifier of the workflow.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createrequest
+        method: POST
+        description: Cflow Create Request
+        inputParameters:
+        - name: workflowId
+          in: path
+          type: string
+          required: true
+          description: The unique identifier of the workflow.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: integromat-api-cflow-workflows-workflowid-reques
+      path: /integromat/api/cflow/workflows/{workflowId}/requests/{requestId}
+      operations:
+      - name: getrequest
+        method: GET
+        description: Cflow Get Request
+        inputParameters:
+        - name: workflowId
+          in: path
+          type: string
+          required: true
+          description: The unique identifier of the workflow.
+        - name: requestId
+          in: path
+          type: string
+          required: true
+          description: The unique identifier of the request.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updaterequest
+        method: PUT
+        description: Cflow Update Request
+        inputParameters:
+        - name: workflowId
+          in: path
+          type: string
+          required: true
+          description: The unique identifier of the workflow.
+        - name: requestId
+          in: path
+          type: string
+          required: true
+          description: The unique identifier of the request.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deleterequest
+        method: DELETE
+        description: Cflow Delete Request
+        inputParameters:
+        - name: workflowId
+          in: path
+          type: string
+          required: true
+          description: The unique identifier of the workflow.
+        - name: requestId
+          in: path
+          type: string
+          required: true
+          description: The unique identifier of the request.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: integromat-api-cflow-workflows-workflowid-reques
+      path: /integromat/api/cflow/workflows/{workflowId}/requests/{requestId}/approve
+      operations:
+      - name: approverequest
+        method: POST
+        description: Cflow Approve Request
+        inputParameters:
+        - name: workflowId
+          in: path
+          type: string
+          required: true
+          description: The unique identifier of the workflow.
+        - name: requestId
+          in: path
+          type: string
+          required: true
+          description: The unique identifier of the request.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: integromat-api-cflow-workflows-workflowid-reques
+      path: /integromat/api/cflow/workflows/{workflowId}/requests/{requestId}/reject
+      operations:
+      - name: rejectrequest
+        method: POST
+        description: Cflow Reject Request
+        inputParameters:
+        - name: workflowId
+          in: path
+          type: string
+          required: true
+          description: The unique identifier of the workflow.
+        - name: requestId
+          in: path
+          type: string
+          required: true
+          description: The unique identifier of the request.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: integromat-api-cflow-workflows-workflowid-drafts
+      path: /integromat/api/cflow/workflows/{workflowId}/drafts
+      operations:
+      - name: createdraftrequest
+        method: POST
+        description: Cflow Create Draft Request
+        inputParameters:
+        - name: workflowId
+          in: path
+          type: string
+          required: true
+          description: The unique identifier of the workflow.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: integromat-api-cflow-users
+      path: /integromat/api/cflow/users
+      operations:
+      - name: listusers
+        method: GET
+        description: Cflow List Users
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: integromat-api-cflow-roles
+      path: /integromat/api/cflow/roles
+      operations:
+      - name: listroles
+        method: GET
+        description: Cflow List Roles
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: cflow-rest
+    description: REST adapter for Cflow API.
+    resources:
+    - path: /integromat/api/cflow/getworkflows
+      name: getworkflows
+      operations:
+      - method: GET
+        name: getworkflows
+        description: Cflow List Workflows
+        call: cflow.getworkflows
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /integromat/api/cflow/workflows/{workflowId}
+      name: getworkflow
+      operations:
+      - method: GET
+        name: getworkflow
+        description: Cflow Get Workflow
+        call: cflow.getworkflow
+        with:
+          workflowId: rest.workflowId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /integromat/api/cflow/workflows/{workflowId}/requests
+      name: listrequests
+      operations:
+      - method: GET
+        name: listrequests
+        description: Cflow List Requests
+        call: cflow.listrequests
+        with:
+          workflowId: rest.workflowId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /integromat/api/cflow/workflows/{workflowId}/requests
+      name: createrequest
+      operations:
+      - method: POST
+        name: createrequest
+        description: Cflow Create Request
+        call: cflow.createrequest
+        with:
+          workflowId: rest.workflowId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /integromat/api/cflow/workflows/{workflowId}/requests/{requestId}
+      name: getrequest
+      operations:
+      - method: GET
+        name: getrequest
+        description: Cflow Get Request
+        call: cflow.getrequest
+        with:
+          workflowId: rest.workflowId
+          requestId: rest.requestId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /integromat/api/cflow/workflows/{workflowId}/requests/{requestId}
+      name: updaterequest
+      operations:
+      - method: PUT
+        name: updaterequest
+        description: Cflow Update Request
+        call: cflow.updaterequest
+        with:
+          workflowId: rest.workflowId
+          requestId: rest.requestId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /integromat/api/cflow/workflows/{workflowId}/requests/{requestId}
+      name: deleterequest
+      operations:
+      - method: DELETE
+        name: deleterequest
+        description: Cflow Delete Request
+        call: cflow.deleterequest
+        with:
+          workflowId: rest.workflowId
+          requestId: rest.requestId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /integromat/api/cflow/workflows/{workflowId}/requests/{requestId}/approve
+      name: approverequest
+      operations:
+      - method: POST
+        name: approverequest
+        description: Cflow Approve Request
+        call: cflow.approverequest
+        with:
+          workflowId: rest.workflowId
+          requestId: rest.requestId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /integromat/api/cflow/workflows/{workflowId}/requests/{requestId}/reject
+      name: rejectrequest
+      operations:
+      - method: POST
+        name: rejectrequest
+        description: Cflow Reject Request
+        call: cflow.rejectrequest
+        with:
+          workflowId: rest.workflowId
+          requestId: rest.requestId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /integromat/api/cflow/workflows/{workflowId}/drafts
+      name: createdraftrequest
+      operations:
+      - method: POST
+        name: createdraftrequest
+        description: Cflow Create Draft Request
+        call: cflow.createdraftrequest
+        with:
+          workflowId: rest.workflowId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /integromat/api/cflow/users
+      name: listusers
+      operations:
+      - method: GET
+        name: listusers
+        description: Cflow List Users
+        call: cflow.listusers
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /integromat/api/cflow/roles
+      name: listroles
+      operations:
+      - method: GET
+        name: listroles
+        description: Cflow List Roles
+        call: cflow.listroles
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: cflow-mcp
+    transport: http
+    description: MCP adapter for Cflow API for AI agent use.
+    tools:
+    - name: getworkflows
+      description: Cflow List Workflows
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: cflow.getworkflows
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getworkflow
+      description: Cflow Get Workflow
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: cflow.getworkflow
+      with:
+        workflowId: tools.workflowId
+      inputParameters:
+      - name: workflowId
+        type: string
+        description: The unique identifier of the workflow.
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listrequests
+      description: Cflow List Requests
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: cflow.listrequests
+      with:
+        workflowId: tools.workflowId
+      inputParameters:
+      - name: workflowId
+        type: string
+        description: The unique identifier of the workflow.
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createrequest
+      description: Cflow Create Request
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: cflow.createrequest
+      with:
+        workflowId: tools.workflowId
+      inputParameters:
+      - name: workflowId
+        type: string
+        description: The unique identifier of the workflow.
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getrequest
+      description: Cflow Get Request
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: cflow.getrequest
+      with:
+        workflowId: tools.workflowId
+        requestId: tools.requestId
+      inputParameters:
+      - name: workflowId
+        type: string
+        description: The unique identifier of the workflow.
+        required: true
+      - name: requestId
+        type: string
+        description: The unique identifier of the request.
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updaterequest
+      description: Cflow Update Request
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: cflow.updaterequest
+      with:
+        workflowId: tools.workflowId
+        requestId: tools.requestId
+      inputParameters:
+      - name: workflowId
+        type: string
+        description: The unique identifier of the workflow.
+        required: true
+      - name: requestId
+        type: string
+        description: The unique identifier of the request.
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deleterequest
+      description: Cflow Delete Request
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: cflow.deleterequest
+      with:
+        workflowId: tools.workflowId
+        requestId: tools.requestId
+      inputParameters:
+      - name: workflowId
+        type: string
+        description: The unique identifier of the workflow.
+        required: true
+      - name: requestId
+        type: string
+        description: The unique identifier of the request.
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: approverequest
+      description: Cflow Approve Request
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: cflow.approverequest
+      with:
+        workflowId: tools.workflowId
+        requestId: tools.requestId
+      inputParameters:
+      - name: workflowId
+        type: string
+        description: The unique identifier of the workflow.
+        required: true
+      - name: requestId
+        type: string
+        description: The unique identifier of the request.
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: rejectrequest
+      description: Cflow Reject Request
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: cflow.rejectrequest
+      with:
+        workflowId: tools.workflowId
+        requestId: tools.requestId
+      inputParameters:
+      - name: workflowId
+        type: string
+        description: The unique identifier of the workflow.
+        required: true
+      - name: requestId
+        type: string
+        description: The unique identifier of the request.
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createdraftrequest
+      description: Cflow Create Draft Request
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: cflow.createdraftrequest
+      with:
+        workflowId: tools.workflowId
+      inputParameters:
+      - name: workflowId
+        type: string
+        description: The unique identifier of the workflow.
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listusers
+      description: Cflow List Users
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: cflow.listusers
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listroles
+      description: Cflow List Roles
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: cflow.listroles
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    CFLOW_TOKEN: CFLOW_TOKEN
