@@ -135,6 +135,109 @@ common:
       - name: Salesforce
       - name: QuickBooks
       - name: Webhooks
+  - type: Integrations
+    url: https://www.cflowapps.com/integrations/
+integrations:
+  - name: Cflow + 0CodeUtil Integration
+  - name: Cflow + Formbricks Integration
+  - name: Cflow + Emelia Integration
+  - name: Cflow + Dub Integration
+  - name: Cflow + DocuPanda Integration
+  - name: Cflow + Cliengo Integration
+  - name: Cflow + Boomerangme Integration
+  - name: Cflow + Yoast Integration
+  - name: Cflow + Wistia Integration
+  - name: Cflow + Virtuagym Integration
+  - name: Cflow + TimeTonic Integration
+  - name: Cflow + Superfaktura Integration
+  - name: Cflow + Supadata Integration
+  - name: Cflow + SALESmanago Integration
+  - name: Cflow + Rossum Integration
+  - name: Cflow + Iterable Integration
+  - name: Cflow + Grist Integration
+  - name: Cflow + GoAffPro Integration
+  - name: Cflow + Freshchat Integration
+  - name: Cflow + ChartMogul Integration
+  - name: Cflow + allmysms Integration
+  - name: Cflow + Moosend Integration
+  - name: Cflow + Joomla Integration
+  - name: Cflow + Filestack Integration
+  - name: Cflow + Texter Integration
+  - name: Cflow + Printful Integration
+  - name: Cflow + MindStudio Integration
+  - name: Cflow + gotoHuman Integration
+  - name: Cflow + EasyPost Integration
+  - name: Cflow + DocuSeal Integration
+  - name: Cflow + Demio Integration
+  - name: Cflow + Veriphone Integration
+  - name: Cflow + SugarCRM Integration
+  - name: Cflow + Shipday Integration
+  - name: Cflow + Pulseem Integration
+  - name: Cflow + Order Desk Integration
+  - name: Cflow + Runware.AI Integration
+  - name: Cflow + All-Images.ai Integration
+  - name: Cflow + ezeep Blue Printing Integration
+  - name: Cflow + Microsoft Entra ID Integration
+  - name: Cflow + Reverse Contact Integration
+  - name: Cflow + T2M URL Shortener Integration
+  - name: Cflow + Amazon SNS Integration
+  - name: Cflow + DigiSignDigiSign Integration
+  - name: Cflow + Google Shopping Integration
+  - name: Cflow + Marketo Engage Integration
+  - name: Cflow + Rocket.Chat Integration
+  - name: Cflow + Citrix ShareFile Integration
+  - name: Cflow + PiAPI/Flux.1 Integration
+  - name: Cflow + Content Snare Integration
+  - name: Cflow + HTML/CSS to Image Integration
+  - name: Cflow + ConvertKit Integration
+  - name: Cflow + Zoom Integration
+  - name: Cflow + Twitch Integration
+  - name: Cflow + Canva Integration
+  - name: Cflow + ElevenLabs Integration
+  - name: Cflow + Google Cloud Storage Integration
+  - name: Cflow + Toggl Track Integration
+  - name: Cflow + Ninox Integration
+  - name: Cflow + Zapier Integration
+  - name: Cflow + Snov.io Integration
+  - name: Cflow + Atera Integration
+  - name: Cflow + GroupMe Integration
+  - name: Cflow + Hubstaff Integration
+  - name: Cflow + PagerDuty Integration
+  - name: Cflow + ParseHub Integration
+  - name: Cflow + Sentry Integration
+  - name: Cflow + Freelo Integration
+  - name: Cflow + Quentn Integration
+  - name: Cflow + Copilot Integration
+  - name: Cflow + Databox Integration
+  - name: Cflow + Funnelforms Integration
+  - name: Cflow + Plutio Integration
+  - name: Cflow + Rentman Integration
+  - name: Cflow + Teamup Integration
+  - name: Cflow + Wufoo Integration
+  - name: Cflow + Contentful Integration
+  - name: Cflow + Dropcontact Integration
+  - name: Cflow + QuickEmailVerification Integration
+  - name: Cflow + SharpSpring Integration
+  - name: Cflow + Clearbit Integration
+  - name: Cflow + Landingi Integration
+  - name: Cflow + Deputy Integration
+  - name: Cflow + Float Integration
+  - name: Cflow + PassKit Integration
+  - name: Cflow + Ragic Integration
+  - name: Cflow + Slybroadcast Integration
+  - name: Cflow + Factorial Integration
+  - name: Cflow + GetMyInvoices Integration
+  - name: Cflow + Opsgenie Integration
+  - name: Cflow + TalentLMS Integration
+  - name: Cflow + VBOUT Integration
+  - name: Cflow + HiBob Integration
+  - name: Cflow + Placetel Integration
+  - name: Cflow + SerwerSMS Integration
+  - name: Cflow + Simvoly Integration
+  - name: Cflow + YOURLS Integration
+  - name: Cflow + Booqable Integration
+  - name: Cflow + ConvertBox Integration
+  - name: Cflow + Findymail Integration
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
