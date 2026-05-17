@@ -2,7 +2,7 @@ aid: cflow
 url: >-
   https://raw.githubusercontent.com/api-evangelist/cflow/refs/heads/main/apis.yml
 name: Cflow
-x-type: company
+kind: company
 tags:
   - Automations
   - Business Process Automation
