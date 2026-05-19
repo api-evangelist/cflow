@@ -1,0 +1,114 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Cflow API — Workflows
+  description: 'Cflow API — Workflows. 2 operations. Lead operation: Cflow List Workflows. Self-contained Naftiko capability
+    covering one Cflow business surface.'
+  tags:
+  - Cflow
+  - Workflows
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    CFLOW_API_KEY: CFLOW_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: cflow-workflows
+    baseUri: https://us.cflowapps.com
+    description: Cflow API — Workflows business capability. Self-contained, no shared references.
+    resources:
+    - name: integromat-api-cflow-getworkflows
+      path: /integromat/api/cflow/getworkflows
+      operations:
+      - name: getworkflows
+        method: GET
+        description: Cflow List Workflows
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: integromat-api-cflow-workflows-workflowId
+      path: /integromat/api/cflow/workflows/{workflowId}
+      operations:
+      - name: getworkflow
+        method: GET
+        description: Cflow Get Workflow
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: workflowId
+          in: path
+          type: string
+          description: The unique identifier of the workflow.
+          required: true
+    authentication:
+      type: apikey
+      key: apikey
+      value: '{{env.CFLOW_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: cflow-workflows-rest
+    port: 8080
+    description: REST adapter for Cflow API — Workflows. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/integromat/api/cflow/getworkflows
+      name: integromat-api-cflow-getworkflows
+      description: REST surface for integromat-api-cflow-getworkflows.
+      operations:
+      - method: GET
+        name: getworkflows
+        description: Cflow List Workflows
+        call: cflow-workflows.getworkflows
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/integromat/api/cflow/workflows/{workflowid}
+      name: integromat-api-cflow-workflows-workflowid
+      description: REST surface for integromat-api-cflow-workflows-workflowId.
+      operations:
+      - method: GET
+        name: getworkflow
+        description: Cflow Get Workflow
+        call: cflow-workflows.getworkflow
+        with:
+          workflowId: rest.workflowId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: cflow-workflows-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Cflow API — Workflows. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: cflow-list-workflows
+      description: Cflow List Workflows
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: cflow-workflows.getworkflows
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: cflow-get-workflow
+      description: Cflow Get Workflow
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: cflow-workflows.getworkflow
+      with:
+        workflowId: tools.workflowId
+      outputParameters:
+      - type: object
+        mapping: $.
