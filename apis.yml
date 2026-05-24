@@ -137,6 +137,8 @@ common:
   - name: Webhooks
 - type: Integrations
   url: https://www.cflowapps.com/integrations/
+- type: LLMsTxt
+  url: https://cflowapps.com/llms.txt
 integrations:
 - name: Cflow + 0CodeUtil Integration
 - name: Cflow + Formbricks Integration
