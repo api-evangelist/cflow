@@ -3,244 +3,240 @@ url: https://raw.githubusercontent.com/api-evangelist/cflow/refs/heads/main/apis
 name: Cflow
 kind: company
 tags:
-- Automations
-- Business Process Automation
-- Integrations
-- No-Code
-- Platform
-- Protocols
-- Rules
-- Workflows
+  - Automations
+  - Business Process Automation
+  - Integrations
+  - No-Code
+  - Platform
+  - Protocols
+  - Rules
+  - Workflows
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 created: '2025-01-08'
 modified: '2026-05-19'
 position: Consumer
-description: Cflow is a cloud-based workflow automation platform that helps organizations streamline and optimize business
-  processes. It offers a drag-and-drop workflow builder, customizable forms, rule-based routing, approval flows, integrations
-  with popular business applications, and real-time analytics. Cflow exposes a REST API allowing developers to list workflows,
-  submit and manage requests, approve or reject tasks, and manage users and roles programmatically.
+description: >-
+  Cflow is a cloud-based workflow automation platform that helps organizations streamline and optimize business
+  processes. It offers a drag-and-drop workflow builder, customizable forms, rule-based routing, approval flows,
+  integrations with popular business applications, and real-time analytics. Cflow exposes a REST API allowing developers
+  to list workflows, submit and manage requests, approve or reject tasks, and manage users and roles programmatically.
 apis:
-- aid: cflow:cflow
-  name: Cflow Workflow API
-  tags:
-  - Approvals
-  - Automation
-  - Integrations
-  - Protocols
-  - Requests
-  - Roles
-  - Rules
-  - Users
-  - Workflows
-  humanURL: https://www.cflowapps.com
-  baseURL: https://us.cflowapps.com
-  properties:
-  - url: https://www.cflowapps.com/workflow/workflow-api/
-    type: Documentation
-  - url: openapi/cflow-openapi.yml
-    type: OpenAPI
-  - url: json-schema/workflow.json
-    type: JSONSchema
-  - url: json-schema/stage.json
-    type: JSONSchema
-  - url: json-schema/request.json
-    type: JSONSchema
-  - url: json-schema/user.json
-    type: JSONSchema
-  - url: json-schema/role.json
-    type: JSONSchema
-  - url: json-ld/cflow-context.jsonld
-    type: JSONLD
-  - type: NaftikoCapability
-    url: capabilities/cflow-requests.yaml
-  - type: NaftikoCapability
-    url: capabilities/cflow-users.yaml
-  - type: NaftikoCapability
-    url: capabilities/cflow-workflows.yaml
-  description: The Cflow Workflow API provides REST endpoints for retrieving workflows, creating and managing requests, approving
-    or rejecting requests at each stage, creating draft requests, and administering users and roles. All business objects
-    and integration objects are exposed as JSON resources and authentication is handled via API key, user key, and username
-    headers.
+  - aid: cflow:cflow
+    name: Cflow Workflow API
+    tags:
+      - Approvals
+      - Automation
+      - Integrations
+      - Protocols
+      - Requests
+      - Roles
+      - Rules
+      - Users
+      - Workflows
+    humanURL: https://www.cflowapps.com
+    baseURL: https://us.cflowapps.com
+    properties:
+      - url: https://www.cflowapps.com/workflow/workflow-api/
+        type: Documentation
+      - url: openapi/cflow-openapi.yml
+        type: OpenAPI
+      - url: json-schema/workflow.json
+        type: JSONSchema
+      - url: json-schema/stage.json
+        type: JSONSchema
+      - url: json-schema/request.json
+        type: JSONSchema
+      - url: json-schema/user.json
+        type: JSONSchema
+      - url: json-schema/role.json
+        type: JSONSchema
+      - url: json-ld/cflow-context.jsonld
+        type: JSONLD
+    description: >-
+      The Cflow Workflow API provides REST endpoints for retrieving workflows, creating and managing requests, approving
+      or rejecting requests at each stage, creating draft requests, and administering users and roles. All business
+      objects and integration objects are exposed as JSON resources and authentication is handled via API key, user key,
+      and username headers.
 common:
-- type: LinkedIn
-  url: https://www.linkedin.com/company/cflowapps
-- type: Website
-  url: https://www.cflowapps.com
-- type: Documentation
-  url: https://www.cflowapps.com/workflow/workflow-api/
-- type: SignUp
-  url: https://www.cflowapps.com/sign-up/
-- type: Pricing
-  url: https://www.cflowapps.com/pricing/
-- type: Blog
-  url: https://www.cflowapps.com/blog/
-- type: Support
-  url: https://help.cflowapps.com/
-- type: TermsOfService
-  url: https://www.cflowapps.com/terms-of-use/
-- type: PrivacyPolicy
-  url: https://www.cflowapps.com/privacy-policy/
-- name: Features
-  type: Features
-  data:
-  - name: Drag-and-Drop Workflow Builder
-  - name: Custom Forms
-  - name: Conditional Rules
-  - name: Multi-Level Approvals
-  - name: Role-Based Access Control
-  - name: Real-Time Analytics
-  - name: Dashboards
-  - name: Email Notifications
-  - name: Mobile Access
-  - name: Audit Trails
-  - name: REST API
-  - name: Webhooks
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/cflowapps
+  - type: Website
+    url: https://www.cflowapps.com
+  - type: Documentation
+    url: https://www.cflowapps.com/workflow/workflow-api/
+  - type: SignUp
+    url: https://www.cflowapps.com/sign-up/
+  - type: Pricing
+    url: https://www.cflowapps.com/pricing/
+  - type: Blog
+    url: https://www.cflowapps.com/blog/
+  - type: Support
+    url: https://help.cflowapps.com/
+  - type: TermsOfService
+    url: https://www.cflowapps.com/terms-of-use/
+  - type: PrivacyPolicy
+    url: https://www.cflowapps.com/privacy-policy/
+  - name: Features
+    type: Features
+    data:
+      - name: Drag-and-Drop Workflow Builder
+      - name: Custom Forms
+      - name: Conditional Rules
+      - name: Multi-Level Approvals
+      - name: Role-Based Access Control
+      - name: Real-Time Analytics
+      - name: Dashboards
+      - name: Email Notifications
+      - name: Mobile Access
+      - name: Audit Trails
+      - name: REST API
+      - name: Webhooks
+      - name: Integrations
+      - name: No-Code
+      - name: Low-Code
+      - name: Parallel Approvals
+      - name: Sequential Approvals
+      - name: Escalations
+      - name: Reminders
+      - name: Reports
+  - name: UseCases
+    type: UseCases
+    data:
+      - name: Purchase Request Approval
+      - name: Employee Onboarding
+      - name: Leave Requests
+      - name: Expense Approval
+      - name: Travel Requests
+      - name: Vendor Onboarding
+      - name: Invoice Approval
+      - name: Capital Expenditure Requests
+      - name: Document Approval
+      - name: Change Management
+      - name: Compliance Workflows
+      - name: Help Desk Ticketing
   - name: Integrations
-  - name: No-Code
-  - name: Low-Code
-  - name: Parallel Approvals
-  - name: Sequential Approvals
-  - name: Escalations
-  - name: Reminders
-  - name: Reports
-- name: UseCases
-  type: UseCases
-  data:
-  - name: Purchase Request Approval
-  - name: Employee Onboarding
-  - name: Leave Requests
-  - name: Expense Approval
-  - name: Travel Requests
-  - name: Vendor Onboarding
-  - name: Invoice Approval
-  - name: Capital Expenditure Requests
-  - name: Document Approval
-  - name: Change Management
-  - name: Compliance Workflows
-  - name: Help Desk Ticketing
-- name: Integrations
-  type: Integrations
-  data:
-  - name: Zapier
-  - name: Microsoft Teams
-  - name: Slack
-  - name: Google Workspace
-  - name: Office 365
-  - name: Dropbox
-  - name: OneDrive
-  - name: SharePoint
-  - name: DocuSign
-  - name: Salesforce
-  - name: QuickBooks
-  - name: Webhooks
-- type: Integrations
-  url: https://www.cflowapps.com/integrations/
-- type: LLMsTxt
-  url: https://cflowapps.com/llms.txt
+    type: Integrations
+    data:
+      - name: Zapier
+      - name: Microsoft Teams
+      - name: Slack
+      - name: Google Workspace
+      - name: Office 365
+      - name: Dropbox
+      - name: OneDrive
+      - name: SharePoint
+      - name: DocuSign
+      - name: Salesforce
+      - name: QuickBooks
+      - name: Webhooks
+  - type: Integrations
+    url: https://www.cflowapps.com/integrations/
+  - type: LLMsTxt
+    url: https://cflowapps.com/llms.txt
 integrations:
-- name: Cflow + 0CodeUtil Integration
-- name: Cflow + Formbricks Integration
-- name: Cflow + Emelia Integration
-- name: Cflow + Dub Integration
-- name: Cflow + DocuPanda Integration
-- name: Cflow + Cliengo Integration
-- name: Cflow + Boomerangme Integration
-- name: Cflow + Yoast Integration
-- name: Cflow + Wistia Integration
-- name: Cflow + Virtuagym Integration
-- name: Cflow + TimeTonic Integration
-- name: Cflow + Superfaktura Integration
-- name: Cflow + Supadata Integration
-- name: Cflow + SALESmanago Integration
-- name: Cflow + Rossum Integration
-- name: Cflow + Iterable Integration
-- name: Cflow + Grist Integration
-- name: Cflow + GoAffPro Integration
-- name: Cflow + Freshchat Integration
-- name: Cflow + ChartMogul Integration
-- name: Cflow + allmysms Integration
-- name: Cflow + Moosend Integration
-- name: Cflow + Joomla Integration
-- name: Cflow + Filestack Integration
-- name: Cflow + Texter Integration
-- name: Cflow + Printful Integration
-- name: Cflow + MindStudio Integration
-- name: Cflow + gotoHuman Integration
-- name: Cflow + EasyPost Integration
-- name: Cflow + DocuSeal Integration
-- name: Cflow + Demio Integration
-- name: Cflow + Veriphone Integration
-- name: Cflow + SugarCRM Integration
-- name: Cflow + Shipday Integration
-- name: Cflow + Pulseem Integration
-- name: Cflow + Order Desk Integration
-- name: Cflow + Runware.AI Integration
-- name: Cflow + All-Images.ai Integration
-- name: Cflow + ezeep Blue Printing Integration
-- name: Cflow + Microsoft Entra ID Integration
-- name: Cflow + Reverse Contact Integration
-- name: Cflow + T2M URL Shortener Integration
-- name: Cflow + Amazon SNS Integration
-- name: Cflow + DigiSignDigiSign Integration
-- name: Cflow + Google Shopping Integration
-- name: Cflow + Marketo Engage Integration
-- name: Cflow + Rocket.Chat Integration
-- name: Cflow + Citrix ShareFile Integration
-- name: Cflow + PiAPI/Flux.1 Integration
-- name: Cflow + Content Snare Integration
-- name: Cflow + HTML/CSS to Image Integration
-- name: Cflow + ConvertKit Integration
-- name: Cflow + Zoom Integration
-- name: Cflow + Twitch Integration
-- name: Cflow + Canva Integration
-- name: Cflow + ElevenLabs Integration
-- name: Cflow + Google Cloud Storage Integration
-- name: Cflow + Toggl Track Integration
-- name: Cflow + Ninox Integration
-- name: Cflow + Zapier Integration
-- name: Cflow + Snov.io Integration
-- name: Cflow + Atera Integration
-- name: Cflow + GroupMe Integration
-- name: Cflow + Hubstaff Integration
-- name: Cflow + PagerDuty Integration
-- name: Cflow + ParseHub Integration
-- name: Cflow + Sentry Integration
-- name: Cflow + Freelo Integration
-- name: Cflow + Quentn Integration
-- name: Cflow + Copilot Integration
-- name: Cflow + Databox Integration
-- name: Cflow + Funnelforms Integration
-- name: Cflow + Plutio Integration
-- name: Cflow + Rentman Integration
-- name: Cflow + Teamup Integration
-- name: Cflow + Wufoo Integration
-- name: Cflow + Contentful Integration
-- name: Cflow + Dropcontact Integration
-- name: Cflow + QuickEmailVerification Integration
-- name: Cflow + SharpSpring Integration
-- name: Cflow + Clearbit Integration
-- name: Cflow + Landingi Integration
-- name: Cflow + Deputy Integration
-- name: Cflow + Float Integration
-- name: Cflow + PassKit Integration
-- name: Cflow + Ragic Integration
-- name: Cflow + Slybroadcast Integration
-- name: Cflow + Factorial Integration
-- name: Cflow + GetMyInvoices Integration
-- name: Cflow + Opsgenie Integration
-- name: Cflow + TalentLMS Integration
-- name: Cflow + VBOUT Integration
-- name: Cflow + HiBob Integration
-- name: Cflow + Placetel Integration
-- name: Cflow + SerwerSMS Integration
-- name: Cflow + Simvoly Integration
-- name: Cflow + YOURLS Integration
-- name: Cflow + Booqable Integration
-- name: Cflow + ConvertBox Integration
-- name: Cflow + Findymail Integration
+  - name: Cflow + 0CodeUtil Integration
+  - name: Cflow + Formbricks Integration
+  - name: Cflow + Emelia Integration
+  - name: Cflow + Dub Integration
+  - name: Cflow + DocuPanda Integration
+  - name: Cflow + Cliengo Integration
+  - name: Cflow + Boomerangme Integration
+  - name: Cflow + Yoast Integration
+  - name: Cflow + Wistia Integration
+  - name: Cflow + Virtuagym Integration
+  - name: Cflow + TimeTonic Integration
+  - name: Cflow + Superfaktura Integration
+  - name: Cflow + Supadata Integration
+  - name: Cflow + SALESmanago Integration
+  - name: Cflow + Rossum Integration
+  - name: Cflow + Iterable Integration
+  - name: Cflow + Grist Integration
+  - name: Cflow + GoAffPro Integration
+  - name: Cflow + Freshchat Integration
+  - name: Cflow + ChartMogul Integration
+  - name: Cflow + allmysms Integration
+  - name: Cflow + Moosend Integration
+  - name: Cflow + Joomla Integration
+  - name: Cflow + Filestack Integration
+  - name: Cflow + Texter Integration
+  - name: Cflow + Printful Integration
+  - name: Cflow + MindStudio Integration
+  - name: Cflow + gotoHuman Integration
+  - name: Cflow + EasyPost Integration
+  - name: Cflow + DocuSeal Integration
+  - name: Cflow + Demio Integration
+  - name: Cflow + Veriphone Integration
+  - name: Cflow + SugarCRM Integration
+  - name: Cflow + Shipday Integration
+  - name: Cflow + Pulseem Integration
+  - name: Cflow + Order Desk Integration
+  - name: Cflow + Runware.AI Integration
+  - name: Cflow + All-Images.ai Integration
+  - name: Cflow + ezeep Blue Printing Integration
+  - name: Cflow + Microsoft Entra ID Integration
+  - name: Cflow + Reverse Contact Integration
+  - name: Cflow + T2M URL Shortener Integration
+  - name: Cflow + Amazon SNS Integration
+  - name: Cflow + DigiSignDigiSign Integration
+  - name: Cflow + Google Shopping Integration
+  - name: Cflow + Marketo Engage Integration
+  - name: Cflow + Rocket.Chat Integration
+  - name: Cflow + Citrix ShareFile Integration
+  - name: Cflow + PiAPI/Flux.1 Integration
+  - name: Cflow + Content Snare Integration
+  - name: Cflow + HTML/CSS to Image Integration
+  - name: Cflow + ConvertKit Integration
+  - name: Cflow + Zoom Integration
+  - name: Cflow + Twitch Integration
+  - name: Cflow + Canva Integration
+  - name: Cflow + ElevenLabs Integration
+  - name: Cflow + Google Cloud Storage Integration
+  - name: Cflow + Toggl Track Integration
+  - name: Cflow + Ninox Integration
+  - name: Cflow + Zapier Integration
+  - name: Cflow + Snov.io Integration
+  - name: Cflow + Atera Integration
+  - name: Cflow + GroupMe Integration
+  - name: Cflow + Hubstaff Integration
+  - name: Cflow + PagerDuty Integration
+  - name: Cflow + ParseHub Integration
+  - name: Cflow + Sentry Integration
+  - name: Cflow + Freelo Integration
+  - name: Cflow + Quentn Integration
+  - name: Cflow + Copilot Integration
+  - name: Cflow + Databox Integration
+  - name: Cflow + Funnelforms Integration
+  - name: Cflow + Plutio Integration
+  - name: Cflow + Rentman Integration
+  - name: Cflow + Teamup Integration
+  - name: Cflow + Wufoo Integration
+  - name: Cflow + Contentful Integration
+  - name: Cflow + Dropcontact Integration
+  - name: Cflow + QuickEmailVerification Integration
+  - name: Cflow + SharpSpring Integration
+  - name: Cflow + Clearbit Integration
+  - name: Cflow + Landingi Integration
+  - name: Cflow + Deputy Integration
+  - name: Cflow + Float Integration
+  - name: Cflow + PassKit Integration
+  - name: Cflow + Ragic Integration
+  - name: Cflow + Slybroadcast Integration
+  - name: Cflow + Factorial Integration
+  - name: Cflow + GetMyInvoices Integration
+  - name: Cflow + Opsgenie Integration
+  - name: Cflow + TalentLMS Integration
+  - name: Cflow + VBOUT Integration
+  - name: Cflow + HiBob Integration
+  - name: Cflow + Placetel Integration
+  - name: Cflow + SerwerSMS Integration
+  - name: Cflow + Simvoly Integration
+  - name: Cflow + YOURLS Integration
+  - name: Cflow + Booqable Integration
+  - name: Cflow + ConvertBox Integration
+  - name: Cflow + Findymail Integration
 maintainers:
-- FN: Kin Lane
-  email: info@apievangelist.com
+  - FN: Kin Lane
+    email: info@apievangelist.com
 specificationVersion: '0.19'
