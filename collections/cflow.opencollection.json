@@ -1,0 +1,296 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cflow API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "apikey",
+      "value": "{{apikey}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Workflows",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Cflow List Workflows",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.cflowapps.com/integromat/api/cflow/getworkflows"
+          },
+          "docs": "Retrieves a list of all available workflows in the Cflow account. Returns workflow definitions including their names, identifiers, and associated metadata."
+        },
+        {
+          "info": {
+            "name": "Cflow Get Workflow",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.cflowapps.com/integromat/api/cflow/workflows/:workflowId",
+            "params": [
+              {
+                "name": "workflowId",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the workflow."
+              }
+            ]
+          },
+          "docs": "Retrieves the details of a specific workflow by its unique identifier, including its stages, fields, and configuration."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Requests",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Cflow List Requests",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.cflowapps.com/integromat/api/cflow/workflows/:workflowId/requests",
+            "params": [
+              {
+                "name": "workflowId",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the workflow."
+              }
+            ]
+          },
+          "docs": "Retrieves a list of requests for a specific workflow. Returns request records including their status and field data."
+        },
+        {
+          "info": {
+            "name": "Cflow Create Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://us.cflowapps.com/integromat/api/cflow/workflows/:workflowId/requests",
+            "params": [
+              {
+                "name": "workflowId",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the workflow."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new request in the specified workflow. Populates the fields and submits it for processing, where all field validations and rules are evaluated and the request may move to the next stage based on rule conditions."
+        },
+        {
+          "info": {
+            "name": "Cflow Get Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.cflowapps.com/integromat/api/cflow/workflows/:workflowId/requests/:requestId",
+            "params": [
+              {
+                "name": "workflowId",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the workflow."
+              },
+              {
+                "name": "requestId",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the request."
+              }
+            ]
+          },
+          "docs": "Retrieves the details of a specific request including its current stage, field values, and processing history."
+        },
+        {
+          "info": {
+            "name": "Cflow Update Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://us.cflowapps.com/integromat/api/cflow/workflows/:workflowId/requests/:requestId",
+            "params": [
+              {
+                "name": "workflowId",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the workflow."
+              },
+              {
+                "name": "requestId",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the request."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an existing request in the specified workflow. Modifies field values and triggers any associated rules or validations."
+        },
+        {
+          "info": {
+            "name": "Cflow Delete Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://us.cflowapps.com/integromat/api/cflow/workflows/:workflowId/requests/:requestId",
+            "params": [
+              {
+                "name": "workflowId",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the workflow."
+              },
+              {
+                "name": "requestId",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the request."
+              }
+            ]
+          },
+          "docs": "Deletes a specific request from the workflow."
+        },
+        {
+          "info": {
+            "name": "Cflow Approve Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://us.cflowapps.com/integromat/api/cflow/workflows/:workflowId/requests/:requestId/approve",
+            "params": [
+              {
+                "name": "workflowId",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the workflow."
+              },
+              {
+                "name": "requestId",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the request."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Approves a workflow request at its current process stage. The request may move to the next stage based on the workflow configuration and rule conditions."
+        },
+        {
+          "info": {
+            "name": "Cflow Reject Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://us.cflowapps.com/integromat/api/cflow/workflows/:workflowId/requests/:requestId/reject",
+            "params": [
+              {
+                "name": "workflowId",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the workflow."
+              },
+              {
+                "name": "requestId",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the request."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Rejects a workflow request at its current process stage with an optional comment explaining the reason for rejection."
+        },
+        {
+          "info": {
+            "name": "Cflow Create Draft Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://us.cflowapps.com/integromat/api/cflow/workflows/:workflowId/drafts",
+            "params": [
+              {
+                "name": "workflowId",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the workflow."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new request in the selected workflow, populates the fields, and saves it as a draft without submitting it for processing."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Cflow List Users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.cflowapps.com/integromat/api/cflow/users"
+          },
+          "docs": "Retrieves a list of users in the Cflow account, including their roles and permissions."
+        },
+        {
+          "info": {
+            "name": "Cflow List Roles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.cflowapps.com/integromat/api/cflow/roles"
+          },
+          "docs": "Retrieves a list of roles defined in the Cflow account, including their associated permissions for workflows, lookups, reports, and support."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
