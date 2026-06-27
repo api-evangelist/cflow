@@ -66,7 +66,7 @@ common:
     url: https://www.cflowapps.com
   - type: Documentation
     url: https://www.cflowapps.com/workflow/workflow-api/
-  - type: SignUp
+  - type: Signup
     url: https://www.cflowapps.com/sign-up/
   - type: Pricing
     url: https://www.cflowapps.com/pricing/
@@ -133,7 +133,7 @@ common:
       - name: Webhooks
   - type: Integrations
     url: https://www.cflowapps.com/integrations/
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://cflowapps.com/llms.txt
 integrations:
   - name: Cflow + 0CodeUtil Integration
