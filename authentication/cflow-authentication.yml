@@ -1,0 +1,31 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/cflow-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: apiKey
+  type: apiKey
+  in: header
+  parameter: apikey
+  description: API key obtained from Cflow Dashboard under Admin > API Settings > Generate API
+    key.
+  sources:
+  - openapi/cflow-openapi.yml
+- name: userKey
+  type: apiKey
+  in: header
+  parameter: userkey
+  description: User key obtained from Cflow Profile > API Key > UserKey.
+  sources:
+  - openapi/cflow-openapi.yml
+- name: username
+  type: apiKey
+  in: header
+  parameter: username
+  description: The Cflow account username.
+  sources:
+  - openapi/cflow-openapi.yml
