@@ -2,13 +2,14 @@
   "repo": "cflow",
   "feeds": [
     {
-      "source": "https://www.cflowapps.com/blog/",
-      "feed_url": "",
-      "saved": 1,
-      "method": "agent-scrape"
+      "source": "https://www.cflowapps.com/pricing/",
+      "feed_url": "https://www.cflowapps.com/pricing/",
+      "title": "",
+      "saved": 0,
+      "method": "none"
     }
   ],
   "post_count": 8,
-  "fetched": "2026-06-27T12:33:56Z",
-  "agent_pulled": "2026-06-27"
+  "fetched": "2026-07-11T11:50:51Z",
+  "agent_pulled": "2026-07-04"
 }
