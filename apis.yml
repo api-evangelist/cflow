@@ -60,6 +60,8 @@ apis:
       objects and integration objects are exposed as JSON resources and authentication is handled via API key, user key,
       and username headers.
 common:
+  - type: AgenticAccess
+    url: agentic-access/cflow-agentic-access.yml
   - type: DomainSecurity
     url: security/cflow-domain-security.yml
   - type: Authentication
