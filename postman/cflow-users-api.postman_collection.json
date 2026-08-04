@@ -1,0 +1,459 @@
+{
+  "info": {
+    "_postman_id": "7792e972-ad7b-41a6-936f-fc6e766df06d",
+    "name": "Cflow Requests Users API",
+    "description": "Cflow's business automation workflow offers REST APIs for applications, services, and programming components. The API provides a way to connect with external applications and update their data in Cflow's process automation engine. You can list workflows, initiate or approve requests, and manage users, roles, and permissions using the external REST API. All business objects and integration object structures are stored as REST API resources and are available in JSON or XML format.\n\nContact Support:\n Name: Cflow Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:19:00.000Z",
+    "updatedAt": "2026-07-28T01:19:00.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-7792e972-ad7b-41a6-936f-fc6e766df06d"
+  },
+  "item": [
+    {
+      "name": "integromat",
+      "item": [
+        {
+          "name": "api",
+          "item": [
+            {
+              "name": "cflow",
+              "item": [
+                {
+                  "name": "users",
+                  "item": [
+                    {
+                      "name": "Cflow List Users",
+                      "id": "34fa437f-a195-4323-a11e-af8fb7135235",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/integromat/api/cflow/users",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "integromat",
+                            "api",
+                            "cflow",
+                            "users"
+                          ]
+                        },
+                        "description": "Retrieves a list of users in the Cflow account, including their roles and permissions."
+                      },
+                      "response": [
+                        {
+                          "id": "8a206a51-ce32-47ac-b312-3d18d9fc66c0",
+                          "name": "A list of users.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "apikey",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/integromat/api/cflow/users",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "integromat",
+                                "api",
+                                "cflow",
+                                "users"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "[\n  {\n    \"id\": \"<string>\",\n    \"username\": \"<string>\",\n    \"email\": \"<email>\",\n    \"role\": \"<string>\",\n    \"status\": \"inactive\"\n  },\n  {\n    \"id\": \"<string>\",\n    \"username\": \"<string>\",\n    \"email\": \"<email>\",\n    \"role\": \"<string>\",\n    \"status\": \"active\"\n  }\n]",
+                          "createdAt": "2026-07-28T01:19:00.000Z",
+                          "updatedAt": "2026-07-28T01:19:00.000Z",
+                          "uid": "35240-8a206a51-ce32-47ac-b312-3d18d9fc66c0"
+                        },
+                        {
+                          "id": "1a45ee54-67bd-4263-8808-6c3de9743100",
+                          "name": "Unauthorized.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "apikey",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/integromat/api/cflow/users",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "integromat",
+                                "api",
+                                "cflow",
+                                "users"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T01:19:00.000Z",
+                          "updatedAt": "2026-07-28T01:19:00.000Z",
+                          "uid": "35240-1a45ee54-67bd-4263-8808-6c3de9743100"
+                        },
+                        {
+                          "id": "615f5d25-e1db-4c36-bba8-64a5398e581d",
+                          "name": "Forbidden. Admin access required.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "apikey",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/integromat/api/cflow/users",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "integromat",
+                                "api",
+                                "cflow",
+                                "users"
+                              ]
+                            }
+                          },
+                          "status": "Forbidden",
+                          "code": 403,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T01:19:00.000Z",
+                          "updatedAt": "2026-07-28T01:19:00.000Z",
+                          "uid": "35240-615f5d25-e1db-4c36-bba8-64a5398e581d"
+                        },
+                        {
+                          "id": "90adf5e8-0aa9-45d4-abe4-5cb9f8b922b7",
+                          "name": "Internal server error.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "apikey",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/integromat/api/cflow/users",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "integromat",
+                                "api",
+                                "cflow",
+                                "users"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T01:19:00.000Z",
+                          "updatedAt": "2026-07-28T01:19:00.000Z",
+                          "uid": "35240-90adf5e8-0aa9-45d4-abe4-5cb9f8b922b7"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:19:00.000Z",
+                      "updatedAt": "2026-07-28T01:19:00.000Z",
+                      "uid": "35240-34fa437f-a195-4323-a11e-af8fb7135235"
+                    }
+                  ],
+                  "id": "129e3530-83b0-41a7-9cc0-0ff642fc4c55",
+                  "createdAt": "2026-07-28T01:19:00.000Z",
+                  "updatedAt": "2026-07-28T01:19:00.000Z",
+                  "uid": "35240-129e3530-83b0-41a7-9cc0-0ff642fc4c55"
+                },
+                {
+                  "name": "roles",
+                  "item": [
+                    {
+                      "name": "Cflow List Roles",
+                      "id": "eaab1b33-c730-481c-b982-124a5bf394cb",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/integromat/api/cflow/roles",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "integromat",
+                            "api",
+                            "cflow",
+                            "roles"
+                          ]
+                        },
+                        "description": "Retrieves a list of roles defined in the Cflow account, including their associated permissions for workflows, lookups, reports, and support."
+                      },
+                      "response": [
+                        {
+                          "id": "e94cb551-082a-40d8-9465-4e8d677dd2fe",
+                          "name": "A list of roles.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "apikey",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/integromat/api/cflow/roles",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "integromat",
+                                "api",
+                                "cflow",
+                                "roles"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "[\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"permissions\": {\n      \"workflows\": \"<string>\",\n      \"lookups\": \"<string>\",\n      \"reports\": \"<string>\",\n      \"support\": \"<string>\"\n    }\n  },\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"permissions\": {\n      \"workflows\": \"<string>\",\n      \"lookups\": \"<string>\",\n      \"reports\": \"<string>\",\n      \"support\": \"<string>\"\n    }\n  }\n]",
+                          "createdAt": "2026-07-28T01:19:00.000Z",
+                          "updatedAt": "2026-07-28T01:19:00.000Z",
+                          "uid": "35240-e94cb551-082a-40d8-9465-4e8d677dd2fe"
+                        },
+                        {
+                          "id": "bbd2df97-d6eb-4399-b76e-0c78a04a2f13",
+                          "name": "Unauthorized.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "apikey",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/integromat/api/cflow/roles",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "integromat",
+                                "api",
+                                "cflow",
+                                "roles"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T01:19:00.000Z",
+                          "updatedAt": "2026-07-28T01:19:00.000Z",
+                          "uid": "35240-bbd2df97-d6eb-4399-b76e-0c78a04a2f13"
+                        },
+                        {
+                          "id": "05523057-cc6f-4dc2-a6fa-102fc583cd20",
+                          "name": "Forbidden. Admin access required.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "apikey",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/integromat/api/cflow/roles",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "integromat",
+                                "api",
+                                "cflow",
+                                "roles"
+                              ]
+                            }
+                          },
+                          "status": "Forbidden",
+                          "code": 403,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T01:19:00.000Z",
+                          "updatedAt": "2026-07-28T01:19:00.000Z",
+                          "uid": "35240-05523057-cc6f-4dc2-a6fa-102fc583cd20"
+                        },
+                        {
+                          "id": "92690e7f-ce0b-4304-b0ac-737e53015878",
+                          "name": "Internal server error.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "apikey",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/integromat/api/cflow/roles",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "integromat",
+                                "api",
+                                "cflow",
+                                "roles"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T01:19:00.000Z",
+                          "updatedAt": "2026-07-28T01:19:00.000Z",
+                          "uid": "35240-92690e7f-ce0b-4304-b0ac-737e53015878"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:19:00.000Z",
+                      "updatedAt": "2026-07-28T01:19:00.000Z",
+                      "uid": "35240-eaab1b33-c730-481c-b982-124a5bf394cb"
+                    }
+                  ],
+                  "id": "969ed8f7-6755-45f4-8564-2c4623f7f646",
+                  "createdAt": "2026-07-28T01:19:00.000Z",
+                  "updatedAt": "2026-07-28T01:19:00.000Z",
+                  "uid": "35240-969ed8f7-6755-45f4-8564-2c4623f7f646"
+                }
+              ],
+              "id": "cd96c260-6653-4287-b4ba-6c76df796cc6",
+              "createdAt": "2026-07-28T01:19:00.000Z",
+              "updatedAt": "2026-07-28T01:19:00.000Z",
+              "uid": "35240-cd96c260-6653-4287-b4ba-6c76df796cc6"
+            }
+          ],
+          "id": "e7310b92-b83d-45f6-a083-4a2af17a7889",
+          "createdAt": "2026-07-28T01:19:00.000Z",
+          "updatedAt": "2026-07-28T01:19:00.000Z",
+          "uid": "35240-e7310b92-b83d-45f6-a083-4a2af17a7889"
+        }
+      ],
+      "id": "1ab27290-b70d-49a0-af4d-22345b402fb5",
+      "createdAt": "2026-07-28T01:19:00.000Z",
+      "updatedAt": "2026-07-28T01:19:00.000Z",
+      "uid": "35240-1ab27290-b70d-49a0-af4d-22345b402fb5"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://us.cflowapps.com"
+    }
+  ]
+}

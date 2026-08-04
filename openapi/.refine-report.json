@@ -1,0 +1,18 @@
+{
+  "provider": "cflow",
+  "sources": [
+    "cflow-requests-api-openapi.yml",
+    "cflow-users-api-openapi.yml",
+    "cflow-workflows-api-openapi.yml"
+  ],
+  "outputs": [
+    "cflow-requests-api-openapi.yml",
+    "cflow-users-api-openapi.yml",
+    "cflow-workflows-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
