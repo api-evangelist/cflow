@@ -1,0 +1,56 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cflow Requests Workflows API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "apikey",
+      "value": "{{apikey}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Workflows",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Cflow List Workflows",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.cflowapps.com/integromat/api/cflow/getworkflows"
+          },
+          "docs": "Retrieves a list of all available workflows in the Cflow account. Returns workflow definitions including their names, identifiers, and associated metadata."
+        },
+        {
+          "info": {
+            "name": "Cflow Get Workflow",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.cflowapps.com/integromat/api/cflow/workflows/:workflowId",
+            "params": [
+              {
+                "name": "workflowId",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the workflow."
+              }
+            ]
+          },
+          "docs": "Retrieves the details of a specific workflow by its unique identifier, including its stages, fields, and configuration."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

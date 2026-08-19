@@ -1,0 +1,514 @@
+{
+  "item": [
+    {
+      "id": "2c20345c-c33b-460a-9a4a-cb8c7e1c4327",
+      "name": "Workflows",
+      "description": {
+        "content": "Operations for managing workflows.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3e22348d-6993-4720-af78-183ef6575f56",
+          "name": "Cflow List Workflows",
+          "request": {
+            "name": "Cflow List Workflows",
+            "description": {
+              "content": "Retrieves a list of all available workflows in the Cflow account. Returns workflow definitions including their names, identifiers, and associated metadata.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "integromat",
+                "api",
+                "cflow",
+                "getworkflows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "91c6583d-1d66-4c05-a5dc-31465160cd61",
+              "name": "A list of workflows.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "integromat",
+                    "api",
+                    "cflow",
+                    "getworkflows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"status\": \"active\",\n    \"stages\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"order\": 4465,\n        \"reviewers\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"order\": 5239,\n        \"reviewers\": [\n          \"string\",\n          \"string\"\n        ]\n      }\n    ],\n    \"createdAt\": \"1951-01-05T23:40:28.676Z\",\n    \"updatedAt\": \"1977-06-12T12:59:55.561Z\"\n  },\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"status\": \"draft\",\n    \"stages\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"order\": 4149,\n        \"reviewers\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"order\": 5598,\n        \"reviewers\": [\n          \"string\",\n          \"string\"\n        ]\n      }\n    ],\n    \"createdAt\": \"1999-12-03T13:40:56.186Z\",\n    \"updatedAt\": \"1977-10-27T21:04:06.799Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1a0b4797-16a5-4720-8332-cea65a7afd07",
+              "name": "Unauthorized. Invalid or missing authentication credentials.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "integromat",
+                    "api",
+                    "cflow",
+                    "getworkflows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5a53b382-488f-41f3-961b-09530e395e11",
+              "name": "Forbidden. Insufficient permissions.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "integromat",
+                    "api",
+                    "cflow",
+                    "getworkflows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9927709c-03b8-4b4d-a71c-ea50d43da78a",
+              "name": "Internal server error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "integromat",
+                    "api",
+                    "cflow",
+                    "getworkflows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3704b991-87aa-4632-a719-31b09f932d65",
+          "name": "Cflow Get Workflow",
+          "request": {
+            "name": "Cflow Get Workflow",
+            "description": {
+              "content": "Retrieves the details of a specific workflow by its unique identifier, including its stages, fields, and configuration.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "integromat",
+                "api",
+                "cflow",
+                "workflows",
+                ":workflowId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "workflowId",
+                  "description": "(Required) The unique identifier of the workflow."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "91f9724b-105d-46db-8a0b-da8bb280cd93",
+              "name": "Workflow details.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "integromat",
+                    "api",
+                    "cflow",
+                    "workflows",
+                    ":workflowId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "workflowId",
+                      "description": "(Required) The unique identifier of the workflow."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"status\": \"inactive\",\n  \"stages\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"order\": 5089,\n      \"reviewers\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"order\": 1157,\n      \"reviewers\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"createdAt\": \"1991-07-25T19:15:17.655Z\",\n  \"updatedAt\": \"2009-12-14T18:53:02.045Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1e0ab283-fb0c-4b7e-8487-788a035b9a6e",
+              "name": "Unauthorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "integromat",
+                    "api",
+                    "cflow",
+                    "workflows",
+                    ":workflowId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "workflowId",
+                      "description": "(Required) The unique identifier of the workflow."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "92172ae3-3ace-4b49-aaac-70a92fd265d8",
+              "name": "Workflow not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "integromat",
+                    "api",
+                    "cflow",
+                    "workflows",
+                    ":workflowId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "workflowId",
+                      "description": "(Required) The unique identifier of the workflow."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "76e5171b-f547-4b10-bf57-1940fd4c8027",
+              "name": "Internal server error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "integromat",
+                    "api",
+                    "cflow",
+                    "workflows",
+                    ":workflowId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "workflowId",
+                      "description": "(Required) The unique identifier of the workflow."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://us.cflowapps.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "6b48f605-d577-428f-91de-17b52c711ee9",
+    "name": "Cflow Requests Workflows API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Cflow's business automation workflow offers REST APIs for applications, services, and programming components. The API provides a way to connect with external applications and update their data in Cflow's process automation engine. You can list workflows, initiate or approve requests, and manage users, roles, and permissions using the external REST API. All business objects and integration object structures are stored as REST API resources and are available in JSON or XML format.\n\nContact Support:\n Name: Cflow Support",
+      "type": "text/plain"
+    }
+  }
+}
