@@ -5,6 +5,15 @@ kind: company
 tags:
   - Automations
   - Business Process Automation
+  - Integration
+  - No-Code
+  - Platform
+  - Protocols
+  - Rules
+  - Workflows
+tags_raw:
+  - Automations
+  - Business Process Automation
   - Integrations
   - No-Code
   - Platform
@@ -66,6 +75,8 @@ apis:
   humanURL: https://www.cflowapps.com
   baseURL: https://us.cflowapps.com
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
