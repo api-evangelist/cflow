@@ -40,17 +40,18 @@ accessModel:
   try_now: true
   public: false
   label: Freemium · Self-serve signup
-  confidence: high
+  confidence: medium
   source:
   - plans
   - authentication
-  generated: '2026-07-22'
+  - security
+  generated: '2026-09-03'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/cflow.png
 access: 3rd-Party
 created: '2025-01-08'
 modified: '2026-05-19'
-position: Consumer
+position: Consuming
 description: >-
   Cflow is a cloud-based workflow automation platform that helps organizations streamline and optimize business
   processes. It offers a drag-and-drop workflow builder, customizable forms, rule-based routing, approval flows,
