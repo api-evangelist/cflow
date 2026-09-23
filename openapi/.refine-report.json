@@ -1,9 +1,7 @@
 {
   "provider": "cflow",
   "sources": [
-    "cflow-requests-api-openapi.yml",
-    "cflow-users-api-openapi.yml",
-    "cflow-workflows-api-openapi.yml"
+    "_original/cflow-openapi.yml"
   ],
   "outputs": [
     "cflow-requests-api-openapi.yml",
@@ -13,6 +11,14 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "cflow-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "cflow-requests-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "cflow-users-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "cflow-workflows-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Cflow Requests API
   description: Cflow's business automation workflow offers REST APIs for applications, services, and programming components. The API provides a way to connect with external applications and update their data in Cflow's process automation engine. You can list workflows, initiate or approve requests, and manage users, roles, and permissions using the external REST API. All business objects and integration object structures are stored as REST API resources and are available in JSON or XML format.
@@ -304,15 +304,6 @@ paths:
           description: Internal server error.
 components:
   schemas:
-    RequestCreate:
-      type: object
-      properties:
-        fields:
-          type: object
-          description: Key-value pairs representing the form field data for the new request.
-          additionalProperties: true
-      required:
-      - fields
     ApprovalAction:
       type: object
       properties:
@@ -322,6 +313,24 @@ components:
         reassignTo:
           type: string
           description: Username to reassign the request to instead of approving or rejecting.
+    RequestUpdate:
+      type: object
+      properties:
+        fields:
+          type: object
+          description: Key-value pairs representing the form field data to update.
+          additionalProperties: true
+      required:
+      - fields
+    RequestCreate:
+      type: object
+      properties:
+        fields:
+          type: object
+          description: Key-value pairs representing the form field data for the new request.
+          additionalProperties: true
+      required:
+      - fields
     Request:
       type: object
       properties:
@@ -358,15 +367,6 @@ components:
           type: string
           format: date-time
           description: Timestamp when the request was last updated.
-    RequestUpdate:
-      type: object
-      properties:
-        fields:
-          type: object
-          description: Key-value pairs representing the form field data to update.
-          additionalProperties: true
-      required:
-      - fields
   securitySchemes:
     apiKey:
       type: apiKey

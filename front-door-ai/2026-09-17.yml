@@ -1,0 +1,33 @@
+# Front Door AI Index — cflow — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: cflow
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: www.cflowapps.com
+  final_host: www.cflowapps.com
+  ownership: own
+  owner: cflow
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 56
+  host_score: 56
+  density: 21.37
+  words: 2620
+  tiers:
+    agentic: 18
+    core: 38
+    model: 0
+  ambiguous: 39
+  top_terms:
+    AI: 38
+    agent: 17
+    automation: 17
+    AI agent: 7
+    copilot: 4
+    prompts: 4
+    agentic: 3
+    intelligence: 3
+    smart: 2
