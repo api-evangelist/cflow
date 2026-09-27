@@ -313,21 +313,21 @@ components:
         reassignTo:
           type: string
           description: Username to reassign the request to instead of approving or rejecting.
-    RequestUpdate:
-      type: object
-      properties:
-        fields:
-          type: object
-          description: Key-value pairs representing the form field data to update.
-          additionalProperties: true
-      required:
-      - fields
     RequestCreate:
       type: object
       properties:
         fields:
           type: object
           description: Key-value pairs representing the form field data for the new request.
+          additionalProperties: true
+      required:
+      - fields
+    RequestUpdate:
+      type: object
+      properties:
+        fields:
+          type: object
+          description: Key-value pairs representing the form field data to update.
           additionalProperties: true
       required:
       - fields
