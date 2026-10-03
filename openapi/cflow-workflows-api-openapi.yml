@@ -72,23 +72,6 @@ paths:
           description: Internal server error.
 components:
   schemas:
-    Stage:
-      type: object
-      properties:
-        id:
-          type: string
-          description: Unique identifier of the stage.
-        name:
-          type: string
-          description: Name of the process stage.
-        order:
-          type: integer
-          description: Order of the stage in the workflow.
-        reviewers:
-          type: array
-          description: Users assigned as reviewers for this stage.
-          items:
-            type: string
     Workflow:
       type: object
       properties:
@@ -121,6 +104,23 @@ components:
           type: string
           format: date-time
           description: Timestamp when the workflow was last updated.
+    Stage:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier of the stage.
+        name:
+          type: string
+          description: Name of the process stage.
+        order:
+          type: integer
+          description: Order of the stage in the workflow.
+        reviewers:
+          type: array
+          description: Users assigned as reviewers for this stage.
+          items:
+            type: string
   securitySchemes:
     apiKey:
       type: apiKey

@@ -304,15 +304,6 @@ paths:
           description: Internal server error.
 components:
   schemas:
-    ApprovalAction:
-      type: object
-      properties:
-        comment:
-          type: string
-          description: Optional comment explaining the approval or rejection.
-        reassignTo:
-          type: string
-          description: Username to reassign the request to instead of approving or rejecting.
     RequestCreate:
       type: object
       properties:
@@ -322,6 +313,15 @@ components:
           additionalProperties: true
       required:
       - fields
+    ApprovalAction:
+      type: object
+      properties:
+        comment:
+          type: string
+          description: Optional comment explaining the approval or rejection.
+        reassignTo:
+          type: string
+          description: Username to reassign the request to instead of approving or rejecting.
     RequestUpdate:
       type: object
       properties:
