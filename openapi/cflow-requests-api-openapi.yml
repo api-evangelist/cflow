@@ -304,15 +304,6 @@ paths:
           description: Internal server error.
 components:
   schemas:
-    RequestCreate:
-      type: object
-      properties:
-        fields:
-          type: object
-          description: Key-value pairs representing the form field data for the new request.
-          additionalProperties: true
-      required:
-      - fields
     RequestUpdate:
       type: object
       properties:
@@ -331,6 +322,15 @@ components:
         reassignTo:
           type: string
           description: Username to reassign the request to instead of approving or rejecting.
+    RequestCreate:
+      type: object
+      properties:
+        fields:
+          type: object
+          description: Key-value pairs representing the form field data for the new request.
+          additionalProperties: true
+      required:
+      - fields
     Request:
       type: object
       properties:
